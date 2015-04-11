@@ -1,0 +1,10 @@
+{
+  "name": "enforce-hsts",
+  "title": "Enforce Strict Transport Security",
+  "id": "jid1-zHqUuagEIxbNpg",
+  "description": "Enforces Strict Transport Security for sites you specified.",
+  "author": "Sami Jaktholm",
+  "license": "MPL 2.0",
+  "version": "0.2",
+  "permissions": {"private-browsing": true}
+}
