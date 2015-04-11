@@ -5,6 +5,6 @@
   "description": "Enforces Strict Transport Security for sites you specified.",
   "author": "Sami Jaktholm",
   "license": "MPL 2.0",
-  "version": "0.2.1",
+  "version": "0.3",
   "permissions": {"private-browsing": true}
 }
