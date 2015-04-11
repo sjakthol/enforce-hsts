@@ -1,4 +1,5 @@
 const { Cu, Ci, Cc } = require("chrome");
+
 const { Enforcer } = require("./enforcer");
 const sss = Cc["@mozilla.org/ssservice;1"]
              .getService(Ci.nsISiteSecurityService);
@@ -54,6 +55,22 @@ exports["test ensureSTS"] = function (assert) {
 
   assert.ok(enforcePub, "STS ensured for public windows.");
   assert.ok(enforcePriv, "STS ensured for private windows.");
+};
+
+exports["test enforce status toggling"] = function (assert) {
+  if (!Enforcer.storage.enforceHosts) {
+    Enforcer.storage.enforceHosts = {}
+  }
+
+  Enforcer.toggleSTSEnforcingForHost("enforsetoggle.com");
+
+  assert.equal(Enforcer.getSTSStatusForHost("enforsetoggle.com"),
+    Enforcer.status.USER_ENFORCED, "NONE -> USER toggled correctly.");
+
+  Enforcer.toggleSTSEnforcingForHost("enforsetoggle.com");
+
+  assert.equal(Enforcer.getSTSStatusForHost("enforsetoggle.com"),
+    Enforcer.status.NOT_ENFORCED, "USER -> NONE toggled correctly.");
 };
 
 require("sdk/test").run(exports);
