@@ -1,10 +1,15 @@
 {
-  "name": "enforce-hsts",
   "title": "Enforce Strict Transport Security",
-  "id": "jid1-zHqUuagEIxbNpg",
-  "description": "Enforces Strict Transport Security for sites you specified.",
-  "author": "Sami Jaktholm",
-  "license": "MPL 2.0",
-  "version": "0.4",
-  "permissions": {"private-browsing": true}
+  "name": "enforce-hsts",
+  "version": "1.0.0",
+  "description": "Enforces Strict Transport Security for sites specified sites.",
+  "main": "index.js",
+  "author": "Sami Jaktholm <sjakthol@outlook.com>",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "permissions": {
+    "private-browsing": true
+  }
 }
