@@ -1,8 +1,8 @@
 {
   "title": "Enforce Strict Transport Security",
   "name": "enforce-hsts",
-  "version": "1.1.0",
-  "description": "Enforces Strict Transport Security for sites specified sites.",
+  "version": "1.1.1",
+  "description": "Enforces Strict Transport Security for specified domains.",
   "main": "index.js",
   "author": "Sami Jaktholm <sjakthol@outlook.com>",
   "engines": {
