@@ -59,7 +59,7 @@ exports["test ensureSTS"] = function (assert) {
 
 exports["test enforce status toggling"] = function (assert) {
   if (!Enforcer.storage.enforceHosts) {
-    Enforcer.storage.enforceHosts = {}
+    Enforcer.storage.enforceHosts = {};
   }
 
   Enforcer.toggleSTSEnforcingForHost("enforsetoggle.com");
@@ -80,6 +80,6 @@ exports["test parent domain sts"] = function (assert) {
     Enforcer.status.USER_ENFORCED_PARENT, "STS on TLD+1 parent domain detected.");
   assert.equal(Enforcer.getSTSStatusForHost("foo.bar.sub.subtest.com"),
     Enforcer.status.USER_ENFORCED_PARENT, "STS on non TLD+1 parent domain detected.");
-}
+};
 
 require("sdk/test").run(exports);
