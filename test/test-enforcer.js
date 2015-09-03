@@ -1,6 +1,6 @@
 const { Cu, Ci, Cc } = require("chrome");
 
-const { Enforcer } = require("./enforcer");
+const { Enforcer } = require("../lib/enforcer");
 const sss = Cc["@mozilla.org/ssservice;1"]
              .getService(Ci.nsISiteSecurityService);
 
