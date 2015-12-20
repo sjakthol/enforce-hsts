@@ -1,4 +1,4 @@
-const { Cu, Ci, Cc } = require("chrome");
+const { Ci, Cc } = require("chrome");
 
 const { Enforcer } = require("../lib/enforcer");
 const sss = Cc["@mozilla.org/ssservice;1"]
@@ -20,7 +20,7 @@ const sss = Cc["@mozilla.org/ssservice;1"]
 function assertIsSecureUri(assert, host, secure, includeSubdomains) {
   let enforcePub = sss.isSecureHost(sss.HEADER_HSTS, host, 0);
   let enforcePriv = sss.isSecureHost(sss.HEADER_HSTS, host,
-                                     Ci.nsISocketProvider.NO_PERMANENT_STORAGE);
+    Ci.nsISocketProvider.NO_PERMANENT_STORAGE);
 
   assert.equal(enforcePub, secure, "STS correct for public contexts");
   assert.equal(enforcePriv, secure, "STS correct for private contexts");
